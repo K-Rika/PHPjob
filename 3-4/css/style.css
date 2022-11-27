@@ -1,0 +1,16 @@
+body{
+    background-color: gray;
+    color: white;
+    text-align: center;
+}
+
+h1{
+    position: relative;
+    top: 100px;
+    border-bottom: 5px solid white;
+}
+
+form{
+    position: relative;
+    top: 200px;
+}
