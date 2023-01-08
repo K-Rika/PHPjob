@@ -1,20 +1,24 @@
 <?php
-require 'lib/password.php';
+require 'dbconnect.php';
 // セッション開始
-session_start();
-include_once("dbInfo.php");
+if(!isset($_SESSION)){
+    session_start();
+}
+//include_once("dbconnect.php");
 
 // エラーメッセージ、登録完了メッセージの初期化
 $errorMessage = "";
 $signUpMessage = "";
 
 // セッション開始
-session_start();
+if(!isset($_SESSION)){
+    session_start();
+}
 
 // ログインボタンが押された場合
 if (isset($_POST["signUp"])) {
     // 1. ユーザIDの入力チェック
-    if (empty($_POST)) {  // 値が空のとき
+    if (empty($_POST["username"])) {  // 値が空のとき
         $errorMessage = 'ユーザーIDが未入力です。';
     } else if (empty($_POST["password"])) {
         $errorMessage = 'パスワードが未入力です。';
@@ -34,7 +38,7 @@ if (isset($_POST["signUp"])) {
         try {
             $pdo = new PDO($dsn, $db['user'], $db['pass'], array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
-            $stmt = $pdo->prepare("INSERT INTO userData(name, password) VALUES (?, ?)");
+            $stmt = $pdo->prepare("INSERT INTO users(name, password) VALUES (?, ?)");
 
             $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT)));  // パスワードのハッシュ化を行う（今回は文字列のみなのでbindValue(変数の内容が変わらない)を使用せず、直接excuteに渡しても問題ない）
             $userid = $pdo->lastinsertid();  // 登録した(DB側でauto_incrementした)IDを$useridに入れる
