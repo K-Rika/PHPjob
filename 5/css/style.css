@@ -1,0 +1,79 @@
+/* ボタン共通 */
+.button,.btn1,.btn2{
+    padding: 5px 50px;
+    color: white;
+    border-radius: 5px;
+}
+
+/* メイン画面 ボタン共通設定 */
+.btn1,.btn2,.btn3{
+    padding: 5px 15px;
+    color: white;
+    border-radius: 5px;
+}
+
+/* ボタン青 */
+.button,.btn1{
+    background-color: dodgerblue;
+    border: 1px solid dodgerblue;
+    margin-top: 20px;
+}
+
+/* カーソル */
+.button:hover,.btn:hover,.btn1:hover,.btn2:hover{
+    cursor: pointer;
+}
+
+/* 新規ユーザボタン */
+.btn{
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    background-color: lightseagreen;
+    border: 1px solid lightseagreen;
+    position: absolute;
+    top:20px;
+    left:200px
+}
+
+/* ログアウトボタン */
+.btn2{
+    background-color: gray;
+    border: 1px solid gray;
+}
+
+/* 削除ボタン */
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.btn3{
+    background-color: red;
+    border: 1px solid red;   
+}
+
+/* テーブル */
+table{
+    border-collapse: collapse;
+    margin-top: 20px;   
+}
+
+th{
+    background-color: gainsboro;
+    padding: 10px 50px;
+    border:solid 1px;
+    border-color: silver;
+    color: dimgray;
+}
+
+tr,td{
+    text-align: center;
+    border:solid 1px;
+    border-color: silver;
+    padding: 10px 50px;
+}
